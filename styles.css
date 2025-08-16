@@ -2,53 +2,210 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
-    background-color: #f9e3e3;
-    font-family: 'Arial', sans-serif;
-    flex-direction: column;
-  }
-  
-  .container {
+    background: linear-gradient(135deg, #ffeaa7, #fab1a0, #fd79a8);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
     text-align: center;
-  }
-  
-  h1 {
-    font-size: 2.5em;
-    color: #d32f2f;
-  }
-  h2 {
-    font-size: 1.8em;
-    color: #ffffff;
-  }
-  .buttons {
-    margin-top: 20px;
-  }
-  
-  .yes-button {
+}
+
+.invitation-card {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border-radius: 20px;
+    box-shadow: 
+        0 15px 35px rgba(0,0,0,0.1),
+        0 5px 15px rgba(0,0,0,0.05),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+    padding: 40px;
+    max-width: 500px;
+    margin: 0 auto;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.invitation-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+    border-radius: 20px;
+    padding: 3px;
+    z-index: -1;
+    background-size: 400% 400%;
+    animation: gradientShift 6s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.card-header {
+    margin-bottom: 30px;
+}
+
+.card-header h1 {
+    font-size: 2.2em;
+    color: #e17055;
+    margin: 0 0 15px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    font-weight: bold;
+}
+
+.heart-decoration {
     font-size: 1.5em;
-    padding: 10px 20px;
-    margin-right: 10px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .no-button {
-    font-size: 1.5em;
-    padding: 10px 20px;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .gif_container img {
-    max-width: 100%;
-    height: auto;
+    animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.main-question {
+    font-size: 1.6em;
+    color: #2d3436;
+    margin: 20px 0 30px 0;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.info-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 25px 0;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0;
+    padding: 10px;
+    background: rgba(255,255,255,0.1);
     border-radius: 10px;
-    margin-top: 20px;
-  }
+    backdrop-filter: blur(10px);
+}
+
+.detail-item .icon {
+    font-size: 1.4em;
+    margin-right: 10px;
+}
+
+.detail-item .label {
+    font-weight: bold;
+    color: #ffffff;
+    flex: 1;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.detail-item .value {
+    color: #fff1e6;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.buttons {
+    margin: 30px 0;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.yes-button, .no-button {
+    font-size: 1.2em;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+}
+
+.yes-button {
+    background: linear-gradient(135deg, #00b894, #00cec9);
+    color: white;
+}
+
+.yes-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,184,148,0.4);
+}
+
+.no-button {
+    background: linear-gradient(135deg, #e17055, #fdcb6e);
+    color: white;
+}
+
+.no-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(225,112,85,0.4);
+}
+
+.button-icon {
+    font-size: 1.1em;
+}
+
+.gif_container {
+    margin: 25px 0;
+}
+
+.gif_container img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border: 3px solid rgba(255,255,255,0.8);
+}
+
+.card-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px dashed #ddd;
+}
+
+.signature {
+    font-style: italic;
+    color: #636e72;
+    font-size: 1.1em;
+    margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .invitation-card {
+        padding: 25px;
+        margin: 10px;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .yes-button, .no-button {
+        width: 100%;
+        max-width: 250px;
+    }
+}
