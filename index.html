@@ -3,40 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Date Night Invation</title>
+    <title>Date Night Invitation</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .info-box {
-            border: 2px solid gold;
-            padding: 20px;
-            margin: 20px 0;
-            background-color: black;
-            color: white;
-            text-align: center;
-        }
-        
-        .info-box h2 {
-            margin: 10px 0;
-            color: white;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Will you hang out with me later? </h1>
-        
-        <div class="info-box">
-            <h2>Dinner Location: Ngõ Thái</h2>
-            <h2>Drink Location: Another Drink</h2>
-            <h2>Dress Code: White and Blue</h2>
-        </div>
-        
-        <div class="buttons">
-            <button class="yes-button" onclick="handleYesClick()">Yes</button>
-            <button class="no-button" onclick="handleNoClick()">No</button>
-        </div>
-        <div class="gif_container">
-            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW85b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="gif">
+        <div class="invitation-card">
+            <div class="card-header">
+                <h1>💕 Date Night Invitation 💕</h1>
+                <div class="heart-decoration">❤️ ❤️ ❤️</div>
+            </div>
+            
+            <div class="card-content">
+                <h2 class="main-question">Will you hang out with me later?</h2>
+                
+                <div class="info-box">
+                    <div class="detail-item">
+                        <span class="icon">🍽️</span>
+                        <span class="label">Dinner Location:</span>
+                        <span class="value">Ngõ Thái</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">🍹</span>
+                        <span class="label">Drink Location:</span>
+                        <span class="value">Another Drink</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">👔</span>
+                        <span class="label">Dress Code:</span>
+                        <span class="value">White and Blue</span>
+                    </div>
+                </div>
+                
+                <div class="buttons">
+                    <button class="yes-button" onclick="handleYesClick()">
+                        <span class="button-icon">💖</span>
+                        Yes, I'd love to!
+                    </button>
+                    <button class="no-button" onclick="handleNoClick()">
+                        <span class="button-icon">💔</span>
+                        Maybe next time
+                    </button>
+                </div>
+            </div>
+            
+            <div class="gif_container">
+                <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW85b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="romantic gif">
+            </div>
+            
+            <div class="card-footer">
+                <p class="signature">With love 💕</p>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
